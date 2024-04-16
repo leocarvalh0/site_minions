@@ -1,5 +1,77 @@
-$bgColor: rgb(0, 255, 115);
+@use "variaveis";
+@use "hero";
+@use 'watch';
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif;
+    list-style: none;
+}
 
 body {
-    background-color: $bgColor;
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    color: variaveis.$corDoTexto;
+    font-weight: lighter;
+}
+
+@mixin title($fontSize: 30px) {
+    font-size: $fontSize;
+    color: variaveis.$corDoTexto;
+    font-weight: bolder;
+}
+
+.text--big {
+    @include text(34px);
+
+    @media (max-width: 768px) {
+        @include text(24px); 
+    }
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(24px);
+}
+
+.title--big {
+    @include title(40px);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @media (max-width: 768px) {
+        @include title(30px); 
+    }
+}
+
+.title {
+    @include title;
+    
+    @media (max-width: 1024px) {
+        @include title(24px);
+    }
+}
+
+.title--small {
+    @include title(20px);
 }
