@@ -1,6 +1,7 @@
 @use "variaveis";
 @use "hero";
 @use 'watch';
+@use 'characters';
 
 @font-face {
     font-family: Avenir;
@@ -26,7 +27,7 @@ body {
     background-color: variaveis.$corDeFundo;
 }
 
-@mixin text($fontSize: 16px) {
+@mixin text($fontSize: 26px) {
     font-size: $fontSize;
     color: variaveis.$corDoTexto;
     font-weight: lighter;
