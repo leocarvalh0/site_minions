@@ -1,0 +1,51 @@
+@use 'variaveis';
+
+.sinopse {
+    background-color: variaveis.$corDois;
+    padding: 100px;
+
+    @media (max-width: 768px) {
+        padding: 40px 30px;
+    }
+    &__container {
+        display: flex;
+        max-width: 1300px;
+        margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 100%;
+            border: 1px solid black;
+
+            @media (max-width: 1300px) {
+                width: 300px;
+                height: 400px;
+            }
+
+            @media (max-width: 768px) {
+                width: 300px;
+                height: 400px;
+            }
+        }
+
+        &__content {
+            margin-left: 80px;
+            text-align: justify;
+
+            @media (max-width: 1024px) {
+                margin: 40px 0;
+
+                h2 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+}

@@ -2,6 +2,8 @@
 @use "hero";
 @use 'watch';
 @use 'characters';
+@use 'sinopse';
+@use 'footer';
 
 @font-face {
     font-family: Avenir;
@@ -49,10 +51,24 @@ body {
 
 .text {
     @include text;
+
+    @media (max-width: 768px) {
+        @include text(18px); 
+    }
 }
 
 .text--small {
-    @include text(24px);
+    @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text(10px); 
+    }
+}
+
+.link-text {
+    @include text(10px);
+    color: variaveis.$corDoTexto;
+    text-decoration: underline;
 }
 
 .title--big {
